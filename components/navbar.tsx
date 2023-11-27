@@ -1,8 +1,13 @@
 "user client";
 
 import { Menu } from "lucide-react";
+import { Poppins } from "next/font/google";
 import Link from "next/link";
 
+const font = Poppins({
+    weight: "600",
+    subsets: ["latin"],
+});
 
 export const Navbar = () => {
   return (
