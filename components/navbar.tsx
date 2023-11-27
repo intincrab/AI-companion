@@ -1,8 +1,12 @@
 "user client";
 
+import { UserButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+
 
 const font = Poppins({
     weight: "600",
@@ -15,9 +19,15 @@ export const Navbar = () => {
       <div className="flec items-center">
         <Menu className="block md:hidden" />
         <Link href="/">
-          <h1 className="hidden md:block text-xl md:text-3xl
-          font-bold text-primary">companion.ai</h1>
+          <h1 className={cn(
+            "hidden md:block text-xl md:text-3xl font-bold text-primary",
+            font.className)}>
+          companion.ai
+          </h1>
         </Link>
+      </div>
+      <div className="flex items-center gap-x-3">
+        <UserButton />
       </div>
     </div>
   );
